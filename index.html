@@ -131,20 +131,29 @@
       Contacto
     </h2>
 
-    <form class="max-w-md mx-auto flex flex-col gap-4 px-4">
-      <input type="text" placeholder="Nombre" required
-        class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A67C52]">
+    <form id="contactForm" class="max-w-md mx-auto flex flex-col gap-4 px-4">
+  <input
+    id="nombre"
+    type="text"
+    placeholder="Nombre"
+    required
+    class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A67C52]"
+  >
 
-      <input type="tel" placeholder="Teléfono" required
-        class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A67C52]">
 
-      <textarea placeholder="Describe tu proyecto"
-        class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A67C52]"></textarea>
+  <textarea
+    id="proyecto"
+    placeholder="Describe tu proyecto"
+    class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A67C52]"
+  ></textarea>
 
-      <button type="submit" class="bg-[#3E2C23] text-white p-3 rounded-lg hover:opacity-90 transition">
-        Enviar
-      </button>
-    </form>
+  <button
+    type="submit"
+    class="bg-[#3E2C23] text-white p-3 rounded-lg hover:opacity-90 transition"
+  >
+    Enviar
+  </button>
+</form>
 
     <div class="text-center mt-6">
       <a href="https://wa.me/526481229284" target="_blank"
@@ -238,6 +247,30 @@
       }
     });
   </script>
+  <script>
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const telefono = 6481229284;
+    const proyecto = document.getElementById('proyecto').value;
+
+    const mensaje =
+`Hola, me gustaría solicitar una cotización.
+
+Nombre: ${nombre}
+Teléfono: ${telefono}
+
+Proyecto:
+${proyecto}`;
+
+    const numeroWhatsapp = '5216141234567'; // Reemplaza por tu número
+
+    const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, '_blank');
+});
+</script>
   <!-- FOOTER -->
   <footer class="bg-[#3E2C23] text-white text-center p-4">
     © 2026 Carpintería Hernandez
