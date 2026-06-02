@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hernandezcarpinteria.vercel.app/sitemap.xml
